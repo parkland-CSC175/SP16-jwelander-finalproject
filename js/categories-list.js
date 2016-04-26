@@ -42,7 +42,7 @@ $(document).ready(function () {
 
     function Category(data) {
         var self = this;
-        var productsUrlBase = "file:///C:/GitHub/SP16-jwelander/final%20project/products-list.html"
+        var productsUrlBase = "http://parkland-csc175.github.io/SP16-jwelander-finalproject/products-list.html"
 
         this.id = ko.observable();
         this.name = ko.observable();

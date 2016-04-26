@@ -3,31 +3,31 @@
 
 <head>
     <title>CSC 175 Final Project</title>
-    
-    <meta property="og:url"           content="product_details.html" />
-	<meta property="og:type"          content="website" />
-	<meta property="og:title"         content="Jims Project" />
-	<meta property="og:description"   content="Bogus data for now" />
-	<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
-    
+
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
         crossorigin="anonymous">
 </head>
 
 <body>
-    <div id="fb-root"></div>
     <script>
-        (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+        window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '204721619913549',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
     </script>
-
-
     <nav class="navbar navbar-default">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -78,10 +78,8 @@
                 </div>
                 <!-- fb part -->
                 <div class="row">
-                    <div class="col-md-12">
-                        <p>in fb row</p>
-                        <div class="fb-like" data-href="product-details.html" data-width="300" data-layout="standard"
-                            data-action="like" data-show-faces="false" data-share="false"></div>
+                    <div
+                        class="fb-like" data-share="false" data-width="450" data-show-faces="true">
                     </div>
                 </div>
                 <!------------------------>

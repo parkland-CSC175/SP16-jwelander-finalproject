@@ -30,7 +30,8 @@ $(document).ready(function () {
     //End of view model--------------------------
     function Product(data) {
         var self = this;
-        var detailsUrlBase = "file:///C:/GitHub/SP16-jwelander/final%20project/product-details.html"
+        //  var detailsUrlBase = "file:///C:/GitHub/SP16-jwelander/final%20project/product-details.html"
+        var detailsUrlBase = "http://parkland-csc175.github.io/SP16-jwelander-finalproject/product-details.html";
 
         this.manufacturer = ko.observable();
         this.name = ko.observable();

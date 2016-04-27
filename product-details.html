@@ -15,24 +15,7 @@
 </head>
 
 <body>
-    <script>
-        window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '769247046508230',
-      xfbml      : true,
-      version    : 'v2.6'
-    });
-    FB.XFBML.parse();
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-    </script>
+   
 
 
     <nav class="navbar navbar-default">
@@ -177,6 +160,25 @@
 
     <!-- custom code for web page -->
     <script src="js/product-details.js" type="text/javascript"></script>
+    
+     <script>
+        window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '769247046508230',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+    FB.XFBML.parse();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+    </script>
 </body>
 
 </html>

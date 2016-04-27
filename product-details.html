@@ -12,8 +12,8 @@
 
 <body>
 
-   <script>
-  window.fbAsyncInit = function() {
+    <script>
+        window.fbAsyncInit = function() {
     FB.init({
       appId      : '769247046508230',
       xfbml      : true,
@@ -28,7 +28,6 @@
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-
     </script>
     <nav class="navbar navbar-default">
         <div class="container">
@@ -77,10 +76,12 @@
                             <span data-bind="text: customerReviewAverage"></span>
                         </p>
                     </div>
+                    <div class="fb-like" data-share="false" data-width="450" data-show-faces="true">
+                    </div>
                 </div>
                 <!-- fb part -->
                 <div class="row" id="social">
-                    <h5> Like what you see?  Let others know! </h5>
+                    <h4> Like what you see?  Let others know! </h4>
                     <div class="fb-like" data-share="false" data-width="450" data-show-faces="true">
                     </div>
                 </div>

@@ -40,6 +40,9 @@ $(document).ready(function () {
         this.starsAverage = ko.observable();
         this.image = ko.observable();
         this.longDescription = ko.observable();
+        this.showIt = ko.observable();
+        
+        self.showIt(true);
 
         if (data && data.sku) {
             self.sku(data.sku);

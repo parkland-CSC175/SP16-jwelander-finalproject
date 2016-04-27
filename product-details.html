@@ -76,11 +76,9 @@
                             <span data-bind="text: customerReviewAverage"></span>
                         </p>
                     </div>
-                    <div class="fb-like" data-share="false" data-width="450" data-show-faces="true">
-                    </div>
                 </div>
                 <!-- fb part -->
-                <div class="row" id="social">
+                <div class="row" id="social" data-bind="if: showIt">
                     <h4> Like what you see?  Let others know! </h4>
                     <div class="fb-like" data-share="false" data-width="450" data-show-faces="true">
                     </div>

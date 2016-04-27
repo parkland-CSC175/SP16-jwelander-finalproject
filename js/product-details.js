@@ -80,5 +80,4 @@ $(document).ready(function () {
     }
     var viewModel = new ViewModel();
     ko.applyBindings(viewModel);
-    location.reload();
 });

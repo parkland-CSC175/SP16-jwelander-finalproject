@@ -8,7 +8,7 @@ $(document).ready(function () {
             version: 'v2.6' // or v2.0, v2.1, v2.2, v2.3
         });
         $('#loginbutton,#feedbutton').removeAttr('disabled');
-        FB.getLoginStatus(updateStatusCallback);
+      //  FB.getLoginStatus(updateStatusCallback);
     });
     console.log("hello world");
     var urlSku = "";

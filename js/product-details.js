@@ -93,6 +93,7 @@ $(document).ready(function () {
         });
         $('#loginbutton,#feedbutton').removeAttr('disabled');
         $("#fbook").addClass("fb-like");
+        console.log("got fbook return");
         //  FB.getLoginStatus(updateStatusCallback);
     });
 });

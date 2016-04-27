@@ -1,15 +1,6 @@
 // https://learn.jquery.com/using-jquery-core/document-ready/
 $(document).ready(function () {
 
-    $.ajaxSetup({ cache: true });
-    $.getScript('//connect.facebook.net/en_US/sdk.js', function () {
-        FB.init({
-            appId: '769247046508230',
-            version: 'v2.6' // or v2.0, v2.1, v2.2, v2.3
-        });
-        $('#loginbutton,#feedbutton').removeAttr('disabled');
-      //  FB.getLoginStatus(updateStatusCallback);
-    });
     console.log("hello world");
     var urlSku = "";
     var detailUrlPrefix = "http://api.bestbuy.com/v1/products(sku=";

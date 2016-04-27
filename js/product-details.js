@@ -92,7 +92,7 @@ $(document).ready(function () {
             version: 'v2.5' // or v2.0, v2.1, v2.2, v2.3
         });
         $('#loginbutton,#feedbutton').removeAttr('disabled');
-        $("#fbook").addClass("fb-like");
+      //  $("#fbook").addClass("fb-like");
         console.log("got fbook return");
         //  FB.getLoginStatus(updateStatusCallback);
     });

@@ -5,18 +5,18 @@
     <title>CSC 175 Final Project</title>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta property="og:url"           content="http://parkland-csc175.github.io/SP16-jwelander-finalproject/product-details.html" />
-	<meta property="og:type"          content="website" />
-	<meta property="og:title"         content="CSC 175 Final Project" />
-	<meta property="og:description"   content="Dont try this, it wont work" />
+    <meta property="og:url" content="http://parkland-csc175.github.io/SP16-jwelander-finalproject/product-details.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CSC 175 Final Project" />
+    <meta property="og:description" content="Dont try this, it wont work" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/site.css">
 </head>
 
 <body>
-   
-  <script>
+
+    <script>
         window.fbAsyncInit = function() {
     FB.init({
       appId      : '769247046508230',
@@ -34,7 +34,7 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
     </script>
-    
+
 
     <nav class="navbar navbar-default">
         <div class="container">
@@ -87,7 +87,8 @@
                 <!-- fb part -->
                 <div class="row" id="social" data-bind="if: showIt">
                     <h4> Like what you see?  Let others know! </h4>
-                    <div class="fb-like" data-href = "http://parkland-csc175.github.io/SP16-jwelander-finalproject/product-details.html" data-share="false" data-width="450" data-show-faces="false">
+                    <div class="fb-like" data-href="http://parkland-csc175.github.io/SP16-jwelander-finalproject/product-details.html" data-share="false"
+                        data-width="450" data-show-faces="false">
                     </div>
                 </div>
                 <!------------------------>
@@ -146,7 +147,7 @@
         <div class="row">
             <div id="leave-a-comment" class="col-md-12">
 
-                <form class="form" action="#">
+                <form class="form" action="https://formspree.io/jwelander1@stu.parkland.edu" method="POST">
                     <h2>Leave a Comment</h2>
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -160,8 +161,12 @@
                         <label for="lastName">Last Name</label>
                         <input type="text" class="form-control" id="lastName" name="lastName">
                     </div>
+                    <div class="form-group">
+                        <label for="commentText">Your Comment</label>
+                        <input type="text" class="form-control" id="commentText" name="CommentText">
+                    </div>
 
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" value="send" class="btn btn-default">Submit</button>
                 </form>
 
             </div>
@@ -178,8 +183,8 @@
 
     <!-- custom code for web page -->
     <script src="js/product-details.js" type="text/javascript"></script>
-    
-     <script>
+
+    <script>
         window.fbAsyncInit = function() {
     FB.init({
       appId      : '769247046508230',
@@ -197,8 +202,8 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
     </script>
-    
-   
+
+
 </body>
 
 </html>

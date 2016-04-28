@@ -44,6 +44,7 @@ $(document).ready(function () {
     //End of view model--------------------------
     function Comments(data) {
         var self = this;
+        console.log(self);
         this.comment = ko.observable();
         this.rating = ko.observable();
         this.submissionTime = ko.observable();
@@ -53,15 +54,16 @@ $(document).ready(function () {
             self.comment(data.comment);
         }
         if (data && data.rating) {
-            self.comment(data.rating);
+            self.rating(data.rating);
         }
         if (data && data.submissionTime) {
             self.submissionTime(data.submissionTime);
-            self.daysOld(function () {
-                return 999;
-            });
+            //       self.daysOld(function () {
+            //         return 999;
+            //   });
+            self.daysOld(999);
         }
-         console.log(self);
+        console.log(self);
     }
     function Detail(data) {
         var self = this;

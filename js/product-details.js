@@ -58,10 +58,9 @@ $(document).ready(function () {
         }
         if (data && data.submissionTime) {
             self.submissionTime(data.submissionTime);
-            //       self.daysOld(function () {
-            //         return 999;
-            //   });
-            self.daysOld(999);
+            self.daysOld(function () {
+                return 999;
+            });
         }
         console.log(self);
     }

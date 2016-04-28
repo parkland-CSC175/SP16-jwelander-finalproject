@@ -21,19 +21,48 @@ $(document).ready(function () {
                 var products = [];
                 result.products.forEach(function (item) {
                     var product = new Detail(item);
-                    $.getJSON(commentsUrl, function (commentsResult) {
-                        console.log(commentsResult);
-                    });
                     products.push(product);
                 });
 
                 self.details(products);
             });
+
+            $.getJSON(commentsUrl, function (commentsResult) {
+                var remarks = [];
+                commentsResult.reviews.forEach(function (item) {
+                    var remark = new Comments(item);
+                    remarks.push(remark);
+                });
+                self.comments(remarks);
+                console.log(remarks);
+            });
         }
         self.details = ko.observableArray();
+        self.comments = ko.observableArray();
         init();
     }
     //End of view model--------------------------
+    function Comments(data) {
+        var self = this;
+        this.comment = ko.observable();
+        this.rating = ko.observable();
+        this.submissionTime = ko.observable();
+        this.daysOld = ko.observable();
+
+        if (data && data.comment) {
+            self.comment(data.comment);
+        }
+        if (data && data.rating) {
+            self.comment(data.rating);
+        }
+        if (data && data.submissionTime) {
+            self.submissionTime(data.submissionTime);
+            self.daysOld(function () {
+                return 999;
+            });
+        }
+
+    }
     function Detail(data) {
         var self = this;
         this.manufacturer = ko.observable();

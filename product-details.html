@@ -61,11 +61,11 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <div class="container" data-bind="foreach: details">
+    <div class="container" >
         <div class="row">
             <div class="col-md-12">
 
-                <div class="thumbnail">
+                <div class="thumbnail" data-bind="foreach: details">
                     <img class="img-responsive" data-bind="attr: {src: image}" alt="">
                     <div class="caption-full">
                         <h4 class="pull-right" data-bind="text: regularPrice"></h4>
@@ -85,7 +85,7 @@
                     </div>
                 </div>
                 <!-- fb part -->
-                <div class="row" id="social" data-bind="if: showIt">
+                <div class="row" id="social">
                     <h4> Like what you see?  Let others know! </h4>
                     <div class="fb-like" data-href="http://parkland-csc175.github.io/SP16-jwelander-finalproject/product-details.html" data-share="false"
                         data-width="450" data-show-faces="false">

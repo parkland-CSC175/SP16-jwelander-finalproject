@@ -61,7 +61,7 @@ $(document).ready(function () {
                 return 999;
             });
         }
-
+         console.log(self);
     }
     function Detail(data) {
         var self = this;
@@ -117,5 +117,6 @@ $(document).ready(function () {
         console.log(self);
     }
     var viewModel = new ViewModel();
+    console.log(viewModel);
     ko.applyBindings(viewModel);
 });

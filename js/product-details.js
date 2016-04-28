@@ -44,6 +44,9 @@ $(document).ready(function () {
     //End of view model--------------------------
     function Comments(data) {
         var self = this;
+        var calculateAge = function(aTimeStamp){
+            return 999;
+        }
         console.log(self);
         this.comment = ko.observable();
         this.rating = ko.observable();
@@ -58,9 +61,8 @@ $(document).ready(function () {
         }
         if (data && data.submissionTime) {
             self.submissionTime(data.submissionTime);
-            self.daysOld(function () {
-                return 999;
-            });
+            var ageInDays = calculateAge(self.submissionTime);
+            self.daysOld(ageInDays);
         }
         console.log(self);
     }

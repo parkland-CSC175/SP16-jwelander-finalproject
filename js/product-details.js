@@ -7,7 +7,7 @@ $(document).ready(function () {
     var detailUrlPostfix = ")?format=json&apiKey=";
     var tempUrl = "https://parkland-csc175.github.io/csc175data/bestbuy/products-list.json";
     var commentsUrlPrefix = "http://api.bestbuy.com/v1/reviews(sku=";
-    var commentsUrlPostfix = "?format=json&apiKey=";
+    var commentsUrlPostfix = ")?format=json&apiKey=";
     var detailSku = document.location.search;
     detailSku = detailSku.substr(1, (detailSku.length) - 1);
 

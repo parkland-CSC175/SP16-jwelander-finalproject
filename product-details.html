@@ -107,7 +107,7 @@
                                 <span data-bind="attr: {class :((rating() > 2.4) ? 'glyphicon glyphicon-star' :'glyphicon glyphicon-star-empty') }"></span>
                                 <span data-bind="attr: {class :((rating() > 3.4) ? 'glyphicon glyphicon-star' :'glyphicon glyphicon-star-empty') }"></span>
                                 <span data-bind="attr: {class :((rating() > 4.4) ? 'glyphicon glyphicon-star' :'glyphicon glyphicon-star-empty') }"></span>                                Anonymous
-                                <span class="pull-right" data-bind="text: (daysOld + ' days ago')"></span>
+                                <span class="pull-right" data-bind="text: (daysOld() + ' days ago')"></span>
                                 <p data-bind="text: comment"></p>
                             </div>
                         </div>

@@ -34,7 +34,6 @@ $(document).ready(function () {
                     remarks.push(remark);
                 });
                 self.comments(remarks);
-                console.log(remarks);
             });
         }
         self.details = ko.observableArray();
@@ -64,7 +63,6 @@ $(document).ready(function () {
             var ageInDays = calculateAge(self.submissionTime);
             self.daysOld(ageInDays);
         }
-        console.log(self);
     }
     function Detail(data) {
         var self = this;
@@ -87,7 +85,6 @@ $(document).ready(function () {
         }
         if (data && data.name) {
             self.name(data.name);
-            console.log(data.name);
         }
 
         if (data && data.manufacturer) {
@@ -117,9 +114,7 @@ $(document).ready(function () {
         if (data && data.longDescription) {
             self.longDescription(data.longDescription);
         }
-        console.log(self);
     }
     var viewModel = new ViewModel();
-    console.log(viewModel);
     ko.applyBindings(viewModel);
 });

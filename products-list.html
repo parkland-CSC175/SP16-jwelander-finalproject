@@ -33,6 +33,19 @@
 </nav>
 
 <div class="container">
+	<div class="row">   <!-- pagination row  -->
+		<div class="col-sm-12">
+			<form id = "pageInput" class="form-inline" role="form">
+				<input id="pageNumber" type="number" class="form-control" name="pageNumber" data-bind="attr: {placeholder: currentPage}" />
+				<button id="btn-decrement" type="button" class="btn btn-primary" data-bind="click: decrementPage">
+					<span class="glyphicon glyphicon-menu-down"></span>
+				</button>
+				<button id="btn-increment" type="button" class="btn btn-primary" data-bind="click: incrementPage">
+					<span class="glyphicon glyphicon-menu-up"></span>
+				</button>
+			</form>
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-md-12">
 			

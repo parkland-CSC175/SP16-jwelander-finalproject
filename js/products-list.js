@@ -13,6 +13,7 @@ $(document).ready(function () {
     productsUrlId = productsUrlId.substr(1, (productsUrlId.length) - 1);
     function ViewModel() {
         var self = this;
+        self.currentPage = ko.observable();
         var storedApiKey = localStorage.getItem("inputAPI");
         function init() {
             var productsUrl = (productsUrlPrefix + productsUrlId + productsUrlPostfix + storedApiKey + pageSizeUrl + pageSize + pageUrl + page);
@@ -22,11 +23,16 @@ $(document).ready(function () {
                     var product = new Product(item);
                     products.push(product);
                 });
-
+                self.currentPage(page);
                 self.products(products);
             });
         }
-
+        self.incrementPage = function (activePage) {
+            console.log("In incr " + activePage);
+        };
+         self.decrementPage = function (activePage) {
+            console.log("In decr " + activePage);
+        };
         self.products = ko.observableArray();
 
         init();

@@ -28,8 +28,8 @@ $(document).ready(function () {
             });
         }
         self.incrementPage = function (activePage) {
-            console.log("In incr " + activePage);
-            if ((self.currentPage() + 1) <= self.totalPages){
+            console.log("In incr " + self.totalPages());
+            if ((self.currentPage() + 1) <= self.totalPages()){
                 self.currentPage(self(currentPage() + 1));
                 console.log(self.currentPage());
             }

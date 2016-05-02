@@ -14,6 +14,8 @@ $(document).ready(function () {
     function ViewModel() {
         var self = this;
         self.currentPage = ko.observable();
+        self.totalPages = ko.observable();
+        self.totalPagesText = ko.observable();
         var storedApiKey = localStorage.getItem("inputAPI");
         function init() {
             var productsUrl = (productsUrlPrefix + productsUrlId + productsUrlPostfix + storedApiKey + pageSizeUrl + pageSize + pageUrl + page);
@@ -24,6 +26,8 @@ $(document).ready(function () {
                     products.push(product);
                 });
                 self.currentPage(page);
+                self.totalPages(result.totalPages);
+                self.totalPagesText(" (" + self.totalPages() + ")");
                 self.products(products);
             });
         }
@@ -53,8 +57,6 @@ $(document).ready(function () {
         this.sku = ko.observable();
         this.regularPrice = ko.observable();
         this.salePrice = ko.observable();
-        this.totalPages = ko.observable();
-        this.totalPagesText = ko.observable();
         this.linkUrl = ko.observable();
 
         if (data && data.sku) {
@@ -71,10 +73,6 @@ $(document).ready(function () {
         }
         if (data && data.salePrice) {
             self.salePrice(data.salePrice);
-        }
-        if (data && data.totalPages) {
-            self.totalPages(data.totalPages);
-            self.totalPagesText(" (" + self.totalPages() + " pages total)" );
         }
         self.linkUrl(detailsUrlBase + "?" + data.sku);
     }

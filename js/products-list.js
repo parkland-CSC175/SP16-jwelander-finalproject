@@ -5,13 +5,17 @@ $(document).ready(function () {
     var productsUrlPrefix = "http://api.bestbuy.com/v1/products(bestSellingRank<=50000&(categoryPath.id=";
     var productsUrlPostfix = "))?sort=name.asc&show=name,regularPrice,sku,manufacturer,salePrice&format=json&apiKey=";
     var tempUrl = "https://parkland-csc175.github.io/csc175data/bestbuy/products-list.json";
+    var pageSize = 10;
+    var page = 1;
+    var pageSizeUrl = "&pageSize=";
+    var pageUrl = "&page=";
     var productsUrlId = document.location.search;
     productsUrlId = productsUrlId.substr(1, (productsUrlId.length) - 1);
     function ViewModel() {
         var self = this;
         var storedApiKey = localStorage.getItem("inputAPI");
         function init() {
-            var productsUrl = (productsUrlPrefix + productsUrlId + productsUrlPostfix + storedApiKey);
+            var productsUrl = (productsUrlPrefix + productsUrlId + productsUrlPostfix + storedApiKey + pageSizeUrl + pageSize + pageUrl + page);
             $.getJSON(productsUrl, function (result) {
                 var products = [];
                 result.products.forEach(function (item) {

@@ -115,6 +115,14 @@ $(document).ready(function () {
             self.longDescription(data.longDescription);
         }
     }
+    
+     jQuery.validator.addMethod("isAlphabetic",
+        function(value, element) {
+            return /^[A-Za-z\d=#$%@_ -]+$/.test(value);
+        },
+        "Sorry, no special characters allowed"
+    );
+    
     $("#comment-form").validate({
         rules: {
             "email": {

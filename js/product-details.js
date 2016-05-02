@@ -43,7 +43,7 @@ $(document).ready(function () {
     //End of view model--------------------------
     function Comments(data) {
         var self = this;
-        var calculateAge = function(aTimeStamp){
+        var calculateAge = function (aTimeStamp) {
             return 999;
         }
         console.log(self);
@@ -115,6 +115,49 @@ $(document).ready(function () {
             self.longDescription(data.longDescription);
         }
     }
+    $("#comment-form").validate({
+        rules: {
+            "email": {
+                required: true,
+                email: true
+            },
+            "firstName": {
+                required: true,
+                isAlphabetic: true,
+                minlength: 2
+            },
+            "lastName": {
+                required: true,
+                isAlphabetic: true,
+                minlength: 2
+            },
+            "commentText": {
+                required: true,
+                minlength: 4
+            }
+        },
+        messages: {
+            "email": {
+                required: "must enter an Email address",
+                email: "Must enter a valid Email address"
+            },
+            "firstName": {
+                required: "must enter your first name",
+                isAlphabetic: "first Name must be alphabetic characters only",
+                minlength: "first name must be at least 2 characters long"
+            },
+            "lastName": {
+                required: "must enter your last name",
+                isAlphabetic: "last Name must be alphabetic characters only",
+                minlength: "last name must be at least 2 characters long"
+            },
+            "commentText": {
+                required: "must enter some comment text before submitting",
+                minlength: "comment must be at least 4 characters long"
+            }
+        }
+
+    });
     var viewModel = new ViewModel();
     ko.applyBindings(viewModel);
 });

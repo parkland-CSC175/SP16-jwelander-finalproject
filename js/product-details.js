@@ -45,8 +45,16 @@ $(document).ready(function () {
         var self = this;
         var calculateAge = function (aTimeStamp) {
             console.log(aTimeStamp);
-            return 999;
-        }
+            var nowDate = new Date();
+            var postedDate = parseDate(aTimeStamp);
+            return Math.round((nowDate - postedDate)/(1000*60*60*24));
+      //      return 999;
+        };
+        var parseDate = function (aTimeStamp) {
+            var dateOnly = aTimeStamp.substr(0,10);
+            var mdy = dateOnly.split('-');
+            return new Date(mdy[0], mdy[1] , mdy[2]);
+        };
         console.log(self);
         this.comment = ko.observable();
         this.rating = ko.observable();
@@ -116,14 +124,14 @@ $(document).ready(function () {
             self.longDescription(data.longDescription);
         }
     }
-    
-     jQuery.validator.addMethod("isAlphabetic",
-        function(value, element) {
+
+    jQuery.validator.addMethod("isAlphabetic",
+        function (value, element) {
             return /^[A-Za-z\d=#$%@_ -]+$/.test(value);
         },
         "Sorry, no special characters allowed"
     );
-    
+
     $("#comment-form").validate({
         rules: {
             "email": {

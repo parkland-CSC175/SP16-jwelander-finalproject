@@ -27,7 +27,7 @@ $(document).ready(function () {
                 });
                 self.currentPage(page);
                 self.totalPages(result.totalPages);
-                self.totalPagesText(" (" + self.totalPages() + ")");
+                self.totalPagesText(" (" + self.totalPages() + " total pages)");
                 self.products(products);
             });
         }
@@ -36,12 +36,19 @@ $(document).ready(function () {
             if ((page + 1) <= self.totalPages()) {
                 page++;
                 self.currentPage(page);
+                init();
                 console.log(page);
             }
 
         };
         self.decrementPage = function (activePage) {
             console.log("In decr " + activePage);
+             if (page > 1) {
+                page--;
+                self.currentPage(page);
+                init();
+                console.log(page);
+            }
         };
         self.products = ko.observableArray();
 

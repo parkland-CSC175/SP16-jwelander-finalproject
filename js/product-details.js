@@ -53,7 +53,7 @@ $(document).ready(function () {
         var parseDate = function (aTimeStamp) {
             var dateOnly = aTimeStamp.substr(0,10);
             var mdy = dateOnly.split('-');
-            return new Date(mdy[0], mdy[1] , mdy[2]);
+            return new Date(mdy[0], mdy[1] - 1, mdy[2]);
         };
         console.log(self);
         this.comment = ko.observable();

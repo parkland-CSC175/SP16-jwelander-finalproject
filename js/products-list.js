@@ -29,8 +29,13 @@ $(document).ready(function () {
         }
         self.incrementPage = function (activePage) {
             console.log("In incr " + activePage);
+            if ((self.currentPage() + 1) <= self.totalPages){
+                self.currentPage(self(currentPage() + 1));
+                console.log(self.currentPage());
+            }
+            
         };
-         self.decrementPage = function (activePage) {
+        self.decrementPage = function (activePage) {
             console.log("In decr " + activePage);
         };
         self.products = ko.observableArray();
@@ -48,6 +53,8 @@ $(document).ready(function () {
         this.sku = ko.observable();
         this.regularPrice = ko.observable();
         this.salePrice = ko.observable();
+        this.totalPages = ko.observable();
+        this.totalPagesText = ko.observable();
         this.linkUrl = ko.observable();
 
         if (data && data.sku) {
@@ -64,6 +71,10 @@ $(document).ready(function () {
         }
         if (data && data.salePrice) {
             self.salePrice(data.salePrice);
+        }
+        if (data && data.totalPages) {
+            self.totalPages(data.totalPages);
+            self.totalPagesText(" (" + self.totalPages() + " pages total)" );
         }
         self.linkUrl(detailsUrlBase + "?" + data.sku);
     }

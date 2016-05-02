@@ -33,11 +33,12 @@ $(document).ready(function () {
         }
         self.incrementPage = function (activePage) {
             console.log("In incr " + self.totalPages());
-            if ((self.currentPage() + 1) <= self.totalPages()){
-                self.currentPage(self(currentPage() + 1));
-                console.log(self.currentPage());
+            if ((page + 1) <= self.totalPages()) {
+                page++;
+                self.currentPage(page);
+                console.log(page);
             }
-            
+
         };
         self.decrementPage = function (activePage) {
             console.log("In decr " + activePage);

@@ -44,6 +44,7 @@ $(document).ready(function () {
     function Comments(data) {
         var self = this;
         var calculateAge = function (aTimeStamp) {
+            console.log(aTimeStamp);
             return 999;
         }
         console.log(self);
@@ -60,7 +61,7 @@ $(document).ready(function () {
         }
         if (data && data.submissionTime) {
             self.submissionTime(data.submissionTime);
-            var ageInDays = calculateAge(self.submissionTime);
+            var ageInDays = calculateAge(self.submissionTime());
             self.daysOld(ageInDays);
         }
     }

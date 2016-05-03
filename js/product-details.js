@@ -64,7 +64,7 @@ $(document).ready(function () {
             self.comment(data.comment);
         }
          if (data && data.sku) {
-            self.sku((data.sku).toString());
+            self.sku(data.sku);
         }
         if (data && data.rating) {
             self.rating(data.rating);

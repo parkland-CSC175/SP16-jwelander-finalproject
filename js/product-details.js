@@ -47,11 +47,11 @@ $(document).ready(function () {
             console.log(aTimeStamp);
             var nowDate = new Date();
             var postedDate = parseDate(aTimeStamp);
-            return Math.round((nowDate - postedDate)/(1000*60*60*24));
-      //      return 999;
+            return Math.round((nowDate - postedDate) / (1000 * 60 * 60 * 24));
+            //      return 999;
         };
         var parseDate = function (aTimeStamp) {
-            var dateOnly = aTimeStamp.substr(0,10);
+            var dateOnly = aTimeStamp.substr(0, 10);
             var mdy = dateOnly.split('-');
             return new Date(mdy[0], mdy[1] - 1, mdy[2]);
         };
@@ -69,8 +69,10 @@ $(document).ready(function () {
         if (data && data.rating) {
             self.rating(data.rating);
         }
-         if (data && data.reviewer[0].name) {
+        if (data && data.reviewer[0].name) {
             self.reviewerName(data.reviewer[0].name);
+        } else {
+            self.reviewerName("No name given");
         }
         if (data && data.submissionTime) {
             self.submissionTime(data.submissionTime);

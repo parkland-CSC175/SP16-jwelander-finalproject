@@ -60,6 +60,8 @@ $(document).ready(function () {
         this.rating = ko.observable();
         this.submissionTime = ko.observable();
         this.daysOld = ko.observable();
+        this.reviewerName = ko.observable();
+        console.log(data.reviewer.name);
 
         if (data && data.comment) {
             self.comment(data.comment);

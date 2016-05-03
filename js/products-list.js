@@ -27,7 +27,7 @@ $(document).ready(function () {
                 });
                 self.currentPage(page.toString());
                 self.totalPages(result.totalPages);
-                self.totalPagesText(" (" + self.totalPages() + " total pages)");
+                self.totalPagesText("Showing page " + self.currentPage() + " of " + self.totalPages() + " total pages");
                 self.products(products);
             });
         }

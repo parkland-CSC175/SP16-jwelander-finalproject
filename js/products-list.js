@@ -32,23 +32,31 @@ $(document).ready(function () {
             });
         }
         self.incrementPage = function (activePage) {
-            console.log("In incr " + self.totalPages());
             if ((page + 1) <= self.totalPages()) {
                 page++;
                 self.currentPage(page.toString());
                 init();
-                console.log(page);
             }
 
         };
         self.decrementPage = function (activePage) {
-            console.log("In decr " + activePage);
-             if (page > 1) {
+            if (page > 1) {
                 page--;
                 self.currentPage(page.toString());
                 init();
-                console.log(page);
             }
+        };
+        self.jumpToTopPage = function (activePage) {
+            page = 1;
+            self.currentPage(page.toString());
+            init();
+
+        };
+        self.jumpToBottomPage = function (activePage) {
+            page = self.totalPages();
+            self.currentPage(page.toString());
+            init();
+
         };
         self.products = ko.observableArray();
 

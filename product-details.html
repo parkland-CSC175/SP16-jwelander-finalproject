@@ -66,7 +66,7 @@
             <div class="col-md-12">
 
                 <div class="thumbnail" data-bind="foreach: details">
-                    <img class="img-responsive" data-bind="attr: {src: image}" alt="">
+                    <img class="img-responsive" data-bind="attr: {src: image}" alt="image unavailable">
                     <div class="caption-full">
                         <h4 class="pull-right" data-bind="text: regularPrice"></h4>
                         <h4><a href="#", data-bind="text: name"></a></h4>
@@ -90,7 +90,7 @@
                     <div class="fb-like" data-href="http://parkland-csc175.github.io/SP16-jwelander-finalproject/product-details.html" data-share="false"
                         data-width="450" data-show-faces="false">
                     </div>
-                <!-- twitter-------------->
+                    <!-- twitter-------------->
                     <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
                     <script>
                         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
@@ -112,7 +112,7 @@
                                 <span data-bind="attr: {class :((rating() > 1.4) ? 'glyphicon glyphicon-star' :'glyphicon glyphicon-star-empty') }"></span>
                                 <span data-bind="attr: {class :((rating() > 2.4) ? 'glyphicon glyphicon-star' :'glyphicon glyphicon-star-empty') }"></span>
                                 <span data-bind="attr: {class :((rating() > 3.4) ? 'glyphicon glyphicon-star' :'glyphicon glyphicon-star-empty') }"></span>
-                                <span data-bind="attr: {class :((rating() > 4.4) ? 'glyphicon glyphicon-star' :'glyphicon glyphicon-star-empty') }"></span>                               
+                                <span data-bind="attr: {class :((rating() > 4.4) ? 'glyphicon glyphicon-star' :'glyphicon glyphicon-star-empty') }"></span>
                                 <span class="pull-right" data-bind="text: (daysOld() + ' days ago')"></span>
                                 <p data-bind="text: ('Reviewed by: ' + reviewerName())"></p>
                                 <p data-bind="text: comment"></p>
@@ -126,7 +126,7 @@
         <div class="row">
             <div id="leave-a-comment" class="col-md-12">
 
-                <form class="form" id = "comment-form" action="https://formspree.io/jwelander1@stu.parkland.edu" method="POST">
+                <form class="form" id="comment-form" action="https://formspree.io/jwelander1@stu.parkland.edu" method="POST">
                     <h2>Leave a Comment</h2>
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -141,8 +141,16 @@
                         <input type="text" class="form-control" id="lastName" name="lastName">
                     </div>
                     <div class="form-group">
+                        <label for="rating">Rating(1-5)</label>
+                        <input type="text" class="form-control" id="rating" name="Rating">
+                    </div>
+                    <div class="form-group">
                         <label for="commentText">Your Comment</label>
                         <input type="text" class="form-control" id="commentText" name="CommentText">
+                    </div>
+                    <div class="form-group" id="hiddenItem" data-bind="visible: false">
+                        <label for="sku">sku</label>
+                        <input type="text" class="form-control" id="sku" name="SKU" data-bind="value: sku">
                     </div>
 
                     <button type="submit" value="send" class="btn btn-default">Submit</button>

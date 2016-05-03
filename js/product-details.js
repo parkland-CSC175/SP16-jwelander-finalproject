@@ -58,9 +58,13 @@ $(document).ready(function () {
         this.submissionTime = ko.observable();
         this.daysOld = ko.observable();
         this.reviewerName = ko.observable();
+        this.sku = ko.observable();
 
         if (data && data.comment) {
             self.comment(data.comment);
+        }
+         if (data && data.sku) {
+            self.sku(data.sku);
         }
         if (data && data.rating) {
             self.rating(data.rating);

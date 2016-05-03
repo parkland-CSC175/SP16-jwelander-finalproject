@@ -35,9 +35,11 @@ $(document).ready(function () {
                 });
                 self.comments(remarks);
             });
+            self.formSku(detailSku);
         }
         self.details = ko.observableArray();
         self.comments = ko.observableArray();
+        self.formSku = ko.observable();
         init();
     }
     //End of view model--------------------------

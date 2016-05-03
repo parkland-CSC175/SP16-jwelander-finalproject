@@ -25,7 +25,7 @@ $(document).ready(function () {
                     var product = new Product(item);
                     products.push(product);
                 });
-                self.currentPage(page);
+                self.currentPage(page.toString());
                 self.totalPages(result.totalPages);
                 self.totalPagesText(" (" + self.totalPages() + " total pages)");
                 self.products(products);
@@ -35,7 +35,7 @@ $(document).ready(function () {
             console.log("In incr " + self.totalPages());
             if ((page + 1) <= self.totalPages()) {
                 page++;
-                self.currentPage(page);
+                self.currentPage(page.toString());
                 init();
                 console.log(page);
             }
@@ -45,7 +45,7 @@ $(document).ready(function () {
             console.log("In decr " + activePage);
              if (page > 1) {
                 page--;
-                self.currentPage(page);
+                self.currentPage(page.toString());
                 init();
                 console.log(page);
             }

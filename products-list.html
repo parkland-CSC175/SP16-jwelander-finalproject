@@ -36,7 +36,7 @@
 	<div class="row">   <!-- pagination row  -->
 		<div class="col-sm-12">
 			<form id = "pageInput" class="form-inline" role="form">Page: 
-				<input id="pageNumber" type="number" class="form-control" name="pageNumber" data-bind="attr: {placeholder: currentPage}" />
+				<input id="pageNumber" type="text" class="form-control" name="pageNumber" data-bind="attr: {value: currentPage}" />
 				<button id="btn-decrement" type="button" class="btn btn-primary" data-bind="click: decrementPage">
 					<span class="glyphicon glyphicon-menu-down"></span>
 				</button>

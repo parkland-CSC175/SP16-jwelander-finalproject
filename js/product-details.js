@@ -44,24 +44,20 @@ $(document).ready(function () {
     function Comments(data) {
         var self = this;
         var calculateAge = function (aTimeStamp) {
-            console.log(aTimeStamp);
             var nowDate = new Date();
             var postedDate = parseDate(aTimeStamp);
             return Math.round((nowDate - postedDate) / (1000 * 60 * 60 * 24));
-            //      return 999;
         };
         var parseDate = function (aTimeStamp) {
             var dateOnly = aTimeStamp.substr(0, 10);
             var mdy = dateOnly.split('-');
             return new Date(mdy[0], mdy[1] - 1, mdy[2]);
         };
-        console.log(self);
         this.comment = ko.observable();
         this.rating = ko.observable();
         this.submissionTime = ko.observable();
         this.daysOld = ko.observable();
         this.reviewerName = ko.observable();
-        console.log(data.reviewer[0].name);
 
         if (data && data.comment) {
             self.comment(data.comment);

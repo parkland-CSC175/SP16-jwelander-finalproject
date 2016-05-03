@@ -7,6 +7,7 @@
 
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
 		crossorigin="anonymous">
+	<link rel="stylesheet" href="css/site.css">
 </head>
 
 <body>
@@ -35,9 +36,9 @@
 		<!-- /.container-fluid -->
 	</nav>
 
-	<div class="row"  id="keySetting">
+	<div class="row" id="keySetting">
 		<div class="col-sm-12">
-			<form id = "apiInput" class="form-inline" role="form">
+			<form id="apiInput" class="form-inline" role="form">
 				<h4>Please verify/set your Best Buy API key if categories not displaying:</h4>
 				<input id="usersAPI" type="text" class="form-control" name="enteredApiKey" data-bind="attr: {placeholder: displayKey}" />
 				<button id="btn-API-set" type="button" class="btn btn-primary" data-bind="click: setAPI">Set</button>

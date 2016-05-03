@@ -61,13 +61,16 @@ $(document).ready(function () {
         this.submissionTime = ko.observable();
         this.daysOld = ko.observable();
         this.reviewerName = ko.observable();
-        console.log(data.reviewer.name);
+        console.log(data.reviewer[0].name);
 
         if (data && data.comment) {
             self.comment(data.comment);
         }
         if (data && data.rating) {
             self.rating(data.rating);
+        }
+         if (data && data.reviewer[0].name) {
+            self.reviewerName(data.reviewer[0].name);
         }
         if (data && data.submissionTime) {
             self.submissionTime(data.submissionTime);

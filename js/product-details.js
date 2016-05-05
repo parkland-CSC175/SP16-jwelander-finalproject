@@ -65,7 +65,7 @@ $(document).ready(function () {
         if (data && data.comment) {
             self.comment(data.comment);
         }
-         if (data && data.sku) {
+        if (data && data.sku) {
             self.sku(data.sku);
         }
         if (data && data.rating) {
@@ -140,6 +140,12 @@ $(document).ready(function () {
         },
         "Sorry, no special characters allowed"
     );
+     jQuery.validator.addMethod("isOneToFive",
+        function (value, element) {
+            return /[1-5]/.test(value);
+        },
+        "Valid ratings are 1 - 5"
+    );
 
     $("#comment-form").validate({
         rules: {
@@ -160,6 +166,12 @@ $(document).ready(function () {
             "commentText": {
                 required: true,
                 minlength: 4
+            },
+            "rating": {
+                required: true,
+                minLength: 1,
+                maxLength: 1,
+                isOneToFive: true
             }
         },
         messages: {
@@ -180,6 +192,12 @@ $(document).ready(function () {
             "commentText": {
                 required: "must enter some comment text before submitting",
                 minlength: "comment must be at least 4 characters long"
+            },
+            "rating": {
+                required: "must enter a rating before submitting",
+                minlength: "comment must be a single character, 1-5",
+                maxlength: "comment must be a single character, 1-5",
+                isOneToFive: "Valid rating range is 1-5"
             }
         }
 

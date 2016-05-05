@@ -169,8 +169,7 @@ $(document).ready(function () {
             },
             "rating": {
                 required: true,
-                minLength: 1,
-                maxLength: 1,
+                maxlength: 1,
                 isOneToFive: true
             }
         },
@@ -195,7 +194,6 @@ $(document).ready(function () {
             },
             "rating": {
                 required: "must enter a rating before submitting",
-                minlength: "comment must be a single character, 1-5",
                 maxlength: "comment must be a single character, 1-5",
                 isOneToFive: "Valid rating range is 1-5"
             }

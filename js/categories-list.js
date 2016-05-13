@@ -32,11 +32,9 @@ $(document).ready(function () {
         };
         var storedApiKey = localStorage.getItem("inputAPI");
         self.displayKey(storedApiKey);
-        console.log(storedApiKey);
         if (storedApiKey !== null) {
             init();
         }
-        //   init();
     }
     //------------------End of View Model---------------------------
 

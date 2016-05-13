@@ -33,6 +33,25 @@
 </nav>
 
 <div class="container">
+	<div class="row">   <!-- pagination row  -->
+		<div class="col-sm-12">
+			<div id = "pageination" >
+				<h4 data-bind="text: totalPagesText"></h4>
+				<button id="btn-decrement" type="button" class="btn btn-primary" data-bind="click: incrementPage">
+					<span class="glyphicon glyphicon-menu-down"></span>
+				</button>
+				<button id="btn-increment" type="button" class="btn btn-primary" data-bind="click: decrementPage">
+					<span class="glyphicon glyphicon-menu-up"></span>
+				</button>
+				<button id="btn-top" type="button" class="btn btn-primary" data-bind="click: jumpToTopPage">
+					Jump to top
+				</button>
+				<button id="btn-bottom" type="button" class="btn btn-primary" data-bind="click: jumpToBottomPage">
+					Jump to bottom
+				</button>
+			</div>
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-md-12">
 			

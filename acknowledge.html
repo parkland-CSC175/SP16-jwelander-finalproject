@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Join Our Email List</title>
+    <style>
+        article,
+        aside,
+        figure,
+        footer,
+        header,
+        nav,
+        section {
+            display: block;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: white;
+            margin: 0 auto;
+            width: 700px;
+            border: 3px solid blue;
+            padding: 10px 25px;
+        }
+        
+        h1 {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div id="content" class="col-md-12">
+                <h1>Thanks for sharing your opinion!</h1>
+                <p>It will take up to 48 hours for your comment to be approved and added</p>
+                <p>The following was submitted:</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-2.1.4.js" type="text/javascript"></script>
+    <script src="js/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(function(){
+           
+           var $div = $("#content");
+           
+           function decode( text ) {
+                text = text.replace(/\+/g, " ");
+                text = text.replace(/%[a-fA-F0-9]{2}/g, 
+                    function ( text ) {
+                        return String.fromCharCode( "0x" + text.substr(1,2));
+                    }
+                );
+                return text;
+            }
+                
+            var url_parts = window.location.toString().split("?");
+            if ( url_parts.length != 2 ) return;
+            
+            var fields = url_parts[1].split("&");
+            
+            if ( fields.length == 0 ) {
+                $div.append($("<p>No data was submitted.</p>"));
+            } else {
+                var $dl = $("<dl></dl>");
+                var field_parts;
+                for ( var i in fields ) {
+                    field_parts = fields[i].split("=");
+                    field_parts[0] = decode( field_parts[0] );
+                    field_parts[1] = decode( field_parts[1] );
+                    $dl.append($("<dt>" + field_parts[0] + "</dt>"));
+                    $dl.append($("<dd>" + field_parts[1] + "</dd>"));
+                }
+                
+                $div.append($dl);
+            }
+            
+        });
+    </script>
+</body>
+
+</html>

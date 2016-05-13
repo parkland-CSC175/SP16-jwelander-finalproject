@@ -5,7 +5,7 @@ $(document).ready(function () {
     var urlSku = "";
     var detailUrlPrefix = "http://api.bestbuy.com/v1/products(sku=";
     var detailUrlPostfix = ")?format=json&apiKey=";
-    var tempUrl = "https://parkland-csc175.github.io/csc175data/bestbuy/products-list.json";
+    var tempUrl = "https://welander.github.io/csc175data/bestbuy/products-list.json";
     var commentsUrlPrefix = "http://api.bestbuy.com/v1/reviews(sku=";
     var commentsUrlPostfix = ")?format=json&pageSize=4&apiKey=";
     var detailSku = document.location.search;

@@ -4,7 +4,7 @@ $(document).ready(function () {
     console.log("hello world");
     var productsUrlPrefix = "http://api.bestbuy.com/v1/products(customerReviewCount>1&bestSellingRank<=50000&(categoryPath.id=";
     var productsUrlPostfix = "))?sort=name.asc&show=name,regularPrice,sku,manufacturer,salePrice&format=json&apiKey=";
-    var tempUrl = "https://parkland-csc175.github.io/csc175data/bestbuy/products-list.json";
+    var tempUrl = "https://welander.github.io/csc175data/bestbuy/products-list.json";
     var pageSize = 10;
     var page = 1;
     var pageSizeUrl = "&pageSize=";
